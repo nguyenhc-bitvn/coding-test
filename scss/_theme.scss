@@ -1,4 +1,4 @@
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+html, body, div,a,p {
 	font-family: $font-name__base;
 	font-style: normal;
 	color:$c-base;
@@ -13,7 +13,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		color:$c-brown;
 		font-size:36px;
 		position:relative;
-		margin-bottom:80px;
+		margin-bottom:75px;
+		letter-spacing:1.8px;
 		&:after{
 			content:"";
 			width:55px;
@@ -36,7 +37,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		font-size:20px;
 		position:relative;
 		text-align:left;
-		padding-bottom:15px;
+		padding-bottom:14px;
+		letter-spacing:.9px;
 		&:after{
 			content:"";
 			position:absolute;
@@ -50,7 +52,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	}
 	&-row{
 		margin-bottom:30px;
-		padding-bottom:30px;
+		padding-bottom:31px;
 		border-bottom:1px solid $c-border-product-title;
 	}
 }
@@ -63,19 +65,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 		border:1px solid $c-border-product;
 		position:relative;
 		box-shadow: 0px 2px 5px 0px rgba(143, 130, 98, 0.4); 
-		
+		height:100%;
 		> *{
 			display:block;
 		}
 
 		&:after{
 			content:"";
-			background:url('../img/more.png') no-repeat;
+			background:url('../img/ico_more.png') no-repeat;
 			height:20px;
 			width:20px;
 			position:absolute;
-			bottom:0;
-			right:0;
+			bottom:1px;
+			right:2px;
 
 		}
 
@@ -93,16 +95,21 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 				}
 			}
 			&-info{
-				padding:10px 15px;
+				padding:7px 15px;
 			}
 			&-label{
 				font-size:16px;
-				margin-bottom:13px;
+				margin-bottom:8px;
+				display: block;
+			    white-space: nowrap;
+			    overflow: hidden;
+			    text-overflow: ellipsis;
+			    letter-spacing:0.64px;
 			}
 			&-name{
 				font-size:12px;
 				line-height:16px;
-				margin-bottom:11px;
+				margin-bottom:5px;
 				display:block;
 				&:hover{
 					text-decoration:underline;
@@ -111,6 +118,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 			&-price{
 				color:$c-red;
 				font-size:24px;
+				letter-spacing: 0.48px;
 			}
 		}
 	}
@@ -118,8 +126,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @media only screen and (min-width:768px){
 	.lists{
-		.product-item{
-			width:percentage(230/1000)
+		margin-left:-13px;
+		margin-right:-13px;
+		.product-item-wrap{
+			width:25%;
+			padding:0 13px;
 		}
 
 	}
@@ -128,7 +139,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 @media only screen and (max-width:767px){
 	.lists{
 		@include flex-wrap(wrap); 
-		.product-item{
+		.product-item-wrap{
 			margin-bottom:25px;
 		}
 
@@ -137,7 +148,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @media only screen and (min-width:480px) and (max-width:767px){
 	.lists{ 
-		.product-item{
+		.product-item-wrap{
 			width:48%;
 		}
 
@@ -146,7 +157,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 @media only screen and (max-width:479px){
 	.lists{
-		.product-item{
+		.product-item-wrap{
 			width:100%;
 		}
 
