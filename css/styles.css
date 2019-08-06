@@ -10,6 +10,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block; }
 
+a {
+  text-decoration: none; }
+
 body {
   line-height: 1; }
 
@@ -130,7 +133,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     .lists .product-item .product-name {
       font-size: 12px;
       line-height: 16px;
-      margin-bottom: 11px; }
+      margin-bottom: 11px;
+      display: block; }
+      .lists .product-item .product-name:hover {
+        text-decoration: underline; }
     .lists .product-item .product-price {
       color: #d23c4d;
       font-size: 24px; }
